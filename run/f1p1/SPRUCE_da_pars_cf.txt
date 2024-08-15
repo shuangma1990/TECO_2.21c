@@ -1,0 +1,60 @@
+lat	Longitude	wsmax	wsmin	
+0	0	0	0
+LAIMAX	LAIMIN	rdepth	Rootmax	Stemmax	
+0	0	0	0	0	
+SapR	SapS	SLA	GLmax	GRmax	Gsmax	stom_n	
+0	0	0	1	1	1	0
+a1	Ds0	Vcmx0	extkU	xfang	alpha	
+0	0	1	0	0	0	
+Tau_Leaf	Tau_Wood	Tau_Root	Tau_F	Tau_C	Tau_Micro	Tau_SlowSOM	Tau_Passive	
+1	0	1	1	1	1	1	1
+gddonset	Q10	Rl0	Rs0	Rr0
+1	1	1	1	1
+r_me	Q10_pro    	kCH4	Omax	CH4_thre	Tveg	Tpro_me		Toxi
+1	1	0	1	0	1	0	0
+f   bubprob Vmaxfraction    
+1   1       1           
+Q10rh   JV  Entrpy
+1       1   1
+etaL	etaW	etaR	f_F2M	f_C2M	f_C2S	f_M2S	f_M2P	f_S2P	f_S2M	f_P2M
+0	0	0	1	1	0	1	1	0	0	0
+lat	Longitude	wsmax	wsmin	
+47.5	-93.45	85.3	0.2
+LAIMAX	LAIMIN	rdepth	Rootmax	Stemmax	
+4.0	0.3	100	400	500	
+SapR	SapS	SLA	GLmax	GRmax	Gsmax	stom_n	
+1	0.2	10.	10.	10.	10.	2.
+a1	Ds0	Vcmx0	extkU	xfang	alpha	
+8	2000	14.	0.51	0	0.385	
+Tau_Leaf	Tau_Wood	Tau_Root	Tau_F	Tau_C	Tau_Micro	Tau_SlowSOM	Tau_Passive	
+0.3	1.0	0.3	0.1	1.0	0.05	5.0	190.
+gddonset	Q10	Rl0	Rs0	Rr0
+100.	1.0	10.	4.5	10.0
+r_me	Q10_pro		kCH4	Omax	CH4_thre	Tveg	Tpro_me		Toxi
+0.001 	1.00		5.0      0.01  	500.	0.001	10.0		10.0
+f   bubprob Vmaxfraction
+0.01   0.01       0.01
+Q10rh   JV  Entrpy
+1.0     1.0   640.0
+etaL	etaW	etaR	f_F2M	f_C2M	f_C2S	f_M2S	f_M2P	f_S2P	f_S2M	f_P2M
+0.5	0.1	0.8	0.45	0.25	0.25	0.2	0.05	0.1	0.4	0.3
+lat	Longitude	wsmax	wsmin	
+47.50	-93.45	50.0	0.2
+LAIMAX	LAIMIN	rdepth	Rootmax	Stemmax	
+8.0	0.3	100	400	500	
+SapR	SapS	SLA	GLmax	GRmax	Gsmax	stom_n	
+1	0.5	150.	50.	30.	30.	2.
+a1	Ds0	Vcmx0	extkU	xfang	alpha	
+8	2000	  80.	0.51	0	0.385	
+Tau_Leaf	Tau_Wood	Tau_Root	Tau_F	Tau_C	Tau_Micro	Tau_SlowSOM	Tau_Passive	
+3.0	100.	2.0	0.5	20.0	0.5	1000.	4000.
+gddonset	Q10	Rl0	Rs0	Rr0
+160.	4.0	   45.	10.5	45.0
+r_me	Q10pro		kCH4	Omax	CH4_thre	Tveg	Tpro_me		Toxi
+0.90	6.00		5.0	    45.  	1500.  	15.0  	10.0		10.0
+f   bubprob Vmaxfraction
+0.5 0.5     0.2 
+Q10rh   JV  Entrpy
+4.0     3.0   670.0
+etaL	etaW	etaR	f_F2M	f_C2M	f_C2S	f_M2S	f_M2P	f_S2P	f_S2M	f_P2M
+0.7	0.2	0.9	0.65	0.3	0.3	0.4	0.2	0.3	0.6	0.6

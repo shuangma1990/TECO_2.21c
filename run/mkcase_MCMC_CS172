@@ -1,0 +1,94 @@
+#!/bin/bash
+
+i=1
+while [ $i -le 6 ]  #1-6 warming gradients
+do
+   j=1
+   while [ $j -le 1 ]  # change to 2 if include the eCO2 sites
+   do
+        echo "removing active_case"
+	rm /scratch_lg/cardamom/shuangma/TECO/TECO_2.21/run/f${j}p${i}_MCMC_CS172/active_case
+      #if [[ $i -eq 1 ]] && [[ $j -eq 1 ]];then  #i refers to plot warming, and j refers to fence eCO2
+
+         if [ -d f${j}p${i}_MCMC_CS172 ];then
+            rm f${j}p${i}_MCMC_CS172/*
+         else
+            mkdir f${j}p${i}_MCMC_CS172
+         fi
+         ln -s /scratch_lg/cardamom/shuangma/TECO/TECO_2.21/src/input/ f${j}p${i}_MCMC_CS172/input   #sofrlink to testination under root directory run/
+         rm -r /scratch_lg/cardamom/shuangma/TECO/TECO_2.21/src/output/SPRUCE/f${j}p${i}_MCMC_CS172/
+         mkdir /scratch_lg/cardamom/shuangma/TECO/TECO_2.21/src/output/SPRUCE/f${j}p${i}_MCMC_CS172/
+         ln -s /scratch_lg/cardamom/shuangma/TECO/TECO_2.21/src/output/SPRUCE/f${j}p${i}_MCMC_CS172 f${j}p${i}_MCMC_CS172/output
+         ln -s /scratch_lg/cardamom/shuangma/TECO/TECO_2.21/src/TECO_2.21 f${j}p${i}_MCMC_CS172/TECO_2.21
+	 ln -s /scratch_lg/cardamom/shuangma/TECO/TECO_2.21/src/SPRUCE_pars_f${j}p${i}.txt f${j}p${i}_MCMC_CS172/SPRUCE_pars_f${j}p${i}.txt
+	 ln -s /scratch_lg/cardamom/shuangma/TECO/TECO_2.21/src/SPRUCE_pars2_f${j}p${i}.txt f${j}p${i}_MCMC_CS172/SPRUCE_pars2_f${j}p${i}.txt
+	 ln -s /scratch_lg/cardamom/shuangma/TECO/TECO_2.21/src/SPRUCE_da_pars_cf.txt f${j}p${i}_MCMC_CS172/SPRUCE_da_pars_cf.txt
+         echo "creating active_case"
+         cat>/scratch_lg/cardamom/shuangma/TECO/TECO_2.21/run/f${j}p${i}_MCMC_CS172/active_case<<EOF
+EOF
+         cat>f${j}p${i}_MCMC_CS172/TECO_2.21.bash<<EOF
+#!/bin/bash
+#PBS -l walltime=48:00:00
+#PBS -N 172_p${i}
+#PBS -o /scratch_lg/cardamom/shuangma/TECO/TECO_2.21/run/f${j}p${i}_MCMC_CS172/output/out.o
+#PBS -e /scratch_lg/cardamom/shuangma/TECO/TECO_2.21/run/f${j}p${i}_MCMC_CS172/output/error.err
+#PBS -k oed
+#PBS -l mem=400mb
+#PBS -m abe
+#PBS -M shuang.ma@jpl.nasa.gov
+#PBS -q array
+
+### set working directory
+cd /scratch_lg/cardamom/shuangma/TECO/TECO_2.21/run/f${j}p${i}_MCMC_CS172
+./TECO_2.21
+EOF
+
+         cat>f${j}p${i}_MCMC_CS172/teco.nml<<EOF
+&control_pm
+  parafile='SPRUCE_pars_f${j}p${i}.txt'
+  parafile2='SPRUCE_pars2_f${j}p${i}.txt'
+  DAparfile='SPRUCE_da_pars_cf.txt'
+  climatefile1='input/SPRUCE/f${j}p${i}/f${j}p${i}forcing2011_2018.txt'
+  outdir='output/'
+  is_grass = False
+  first_year = 2011
+  use_plinit = ${j}${i} !0 is default 4 6 7 8 10 11 13 16 17 19 20 21
+  do_soilphy = True
+  do_snow = True
+  do_EBG = True
+  do_methane_fcast = False
+  do_co2_fcast = False
+  do_co2_da = True
+  do_methane_da = False
+  do_soilwater_da = False
+  do_soilt_da = False
+  do_snow_da = False
+  do_watertable_da = False
+  use_cflux_ob = 0
+  use_cflux_hr_ob = 1
+  use_cpool_ob = 1
+  use_ch4flux_ob = 0
+  use_ch4conc_ob = 1
+  use_soilwater_ob = 0
+  use_soilt_ob = 0
+  use_snow_ob = 0
+  use_watertable_ob = 0
+  use_td_ob = 0
+  obsfile_cflux      = '' !'input/SPRUCE/f${j}p${i}/obs_cflux_f${j}p${i}.txt'
+  obsfile_cflux_hr   = 'input/SPRUCE/f${j}p${i}/obs_cflux_hr_f${j}p${i}.txt'
+  obsfile_cpool      = 'input/SPRUCE/f${j}p${i}/obs_cpool_f${j}p${i}.txt'
+  obsfile_soilprofc  = ''
+  obsfile_ch4flux    = 'input/SPRUCE/f${j}p${i}/obs_ch4flux_f${j}p${i}.txt'
+  obsfile_ch4conc    = 'input/SPRUCE/f${j}p${i}/obs_ch4conc_f${j}p${i}.txt'
+  obsfile_sw  = ''
+  obsfile_st      = ''
+  obsfile_snow      = ''
+  obsfile_wt         = ''
+  obsfile_thawd      = ''
+&end
+EOF
+
+      j=`expr $j + 1`
+   done
+   i=`expr $i + 1`
+done

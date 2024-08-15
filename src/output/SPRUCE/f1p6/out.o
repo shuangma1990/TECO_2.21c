@@ -1,0 +1,43 @@
+ parafile=SPRUCE_pars_f1p6.txt                                                                                                    
+ parafile2=SPRUCE_pars2_f1p6.txt                                                                                                   
+ DAparfile=SPRUCE_da_pars_cf.txt                                                                                                   
+ climatefile1=input/SPRUCE/f1p6/f1p6forcing2011_2018.txt                                                                                                            
+ outdir=output/                                                                                                                 
+ is_grass= F
+ first_year=        2011
+ use_plinit=          16
+ do_soilphy= T
+ do_snow= T
+ do_EBG= T
+ do_methane_fcast= F
+ do_co2_fcast= F
+ do_co2_da= F
+ do_methane_da= F
+ do_soilwater_da= F
+ do_soilt_da= F
+ do_snow_da= F
+ do_watertable_da= F
+ use_cflux_ob=           0
+ use_cflux_hr_ob=           1
+ use_cpool_ob=           1
+ use_ch4flux_ob=           0
+ use_ch4conc_ob=           1
+ use_soilwater_ob=           0
+ use_soilt_ob=           0
+ use_snow_ob=           0
+ use_watertable_ob=           0
+ use_td_ob=           0
+ obsfile_cflux=                                                                                                                                                      
+ obsfile_cflux_hr=input/SPRUCE/f1p6/obs_cflux_hr_f1p6.txt                                                                                                               
+ obsfile_cpool=input/SPRUCE/f1p6/obs_cpool_f1p6.txt                                                                                                                  
+ obsfile_soilprofc=                                                                                                                                                      
+ obsfile_ch4flux=input/SPRUCE/f1p6/obs_ch4flux_f1p6.txt                                                                                                                
+ obsfile_ch4conc=input/SPRUCE/f1p6/obs_ch4conc_f1p6.txt                                                                                                                
+ obsfile_sw=                                                                                                                                                      
+ obsfile_st=                                                                                                                                                      
+ obsfile_snow=                                                                                                                                                      
+ obsfile_wt=                                                                                                                                                      
+ obsfile_thawd=                                                                                                                                                      
+ getting parameters from SPRUCE_pars2_f1p6.txt                                                                                                   
+ getting parameters from SPRUCE_pars_f1p6.txt                                                                                                    
+ head parval   47.5000000      -93.4499969       95.3000031       2.20000005       8.00000000      0.300000012       150.000000       500.000000       1000.00000      0.899999976      0.500000000       33.0000000       15.0000000       19.8763008       10.4987001       2.00000000       8.00000000       2000.00000       22.5000000      0.509999990       0.00000000      0.384999990      0.519999981       2.50000000      0.699999988      0.325199991       3.89949989      0.422600001       70.5000000       1243.56433       123.256798       2.50000000       40.5000000       9.00000000       13.8999996      0.100000001       1.49730003       5.00000000       4.09999990       1400.00000       1.89999998       10.0000000       10.0000000      0.310000002       7.07999989E-02  0.169699997       2.99000001       1.50000000       660.500000      0.600000024      0.150000006      0.850000024      0.550000012      0.275000006      0.275000006      0.300000012      0.100000001      0.200000003      0.500000000      0.449999988     parval2   47.5000000      -93.4499969       95.3000031       2.20000005       8.00000000      0.300000012       150.000000       500.000000       1000.00000      0.899999976      0.500000000       33.0000000       15.0000000       19.8763008       10.4987001       2.00000000       8.00000000       2000.00000       22.5000000      0.509999990       0.00000000      0.384999990      0.519999981       2.50000000      0.699999988      0.325199991       3.89949989      0.422600001       70.5000000       1243.56433       123.256798       2.50000000       40.5000000       9.00000000       13.8999996      0.100000001       1.49730003       5.00000000       4.09999990       1400.00000       1.89999998       10.0000000       10.0000000      0.310000002       7.07999989E-02  0.169699997       2.99000001       1.50000000       660.500000      0.600000024      0.150000006      0.850000024      0.550000012      0.275000006      0.275000006      0.300000012      0.100000001      0.200000003      0.500000000      0.449999988    
